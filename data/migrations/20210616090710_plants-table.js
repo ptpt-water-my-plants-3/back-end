@@ -1,4 +1,4 @@
-// need to find out how we want to structure out our server tables/data, for now this is just a placeholder
+// foreign key is commented out b/c cant find a way to limit posts to their user
 exports.up = function(knex) {
   return knex.schema
   .createTable('users', user => {
@@ -12,13 +12,12 @@ exports.up = function(knex) {
     plant.string('nickname', 128).notNullable().unique();
     plant.string('species', 128).notNullable();
     plant.text('h20_frequency').notNullable();
-    plant.integer('user_id')
-      .unsigned()
-      .references('user_id')
-      .inTable('users')
-      .notNullable()
-      .onDelete('CASCADE')
-      .onUpdate('CASCADE')
+    // plant.integer('user_id')
+    //   .unsigned()
+    //   .references('user_id')
+    //   .inTable('users')
+    //   .onDelete('CASCADE')
+    //   .onUpdate('CASCADE')
   })
 };
 
