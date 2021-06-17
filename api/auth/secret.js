@@ -1,4 +1,5 @@
-// setting secret for web token
+require('dotenv').config();
+
 module.exports = {
-  jwtSecret: process.env.JWT_SECRET || 'authorized personnel only'
+  jwtSecret: process.env.JWT_SECRET
 }
