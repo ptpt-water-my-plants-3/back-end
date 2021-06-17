@@ -60,7 +60,7 @@ function makeToken(user){
       phonenumber: user.phonenumber
     }
     const options = {
-      expiresIn: '600s'
+      expiresIn: '60 minutes'
     }
     return jwt.sign(payload, jwtSecret, options)
   }
