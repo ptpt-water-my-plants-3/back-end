@@ -2,6 +2,8 @@
 Deployed url: [https://bewyp-pt.herokuapp.com/api]
 
 # ===Register/Logging In===
+phone number is okay without the dashes as well
+
 ####[POST] /auth/register 
 ```
 {
@@ -12,7 +14,7 @@ Deployed url: [https://bewyp-pt.herokuapp.com/api]
 ```
 
 ####[POST] /auth/login
-phone number is okay without the dashes as well
+
 ```
 {
   username: 'TestAcc', 
