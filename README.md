@@ -7,8 +7,8 @@ phone number is okay without the dashes as well
 ####[POST] /auth/register 
 ```
 {
-  username: 'TestAcc', 
-  password: 'password', 
+  username: 'LambdAdmin', 
+  password: 'testpass', 
   phonenumber: '111-111-111'
 }
 ```
@@ -17,8 +17,8 @@ phone number is okay without the dashes as well
 
 ```
 {
-  username: 'TestAcc', 
-  password: 'password', 
+  username: 'LambdAdmin', 
+  password: 'testpass', 
   phonenumber: '111-111-111'
 }
 ```
