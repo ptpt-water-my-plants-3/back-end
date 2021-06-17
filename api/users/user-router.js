@@ -1,10 +1,9 @@
 const router = require('express').Router();
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const restricted = require('../middleware/restricted');
 
 const Users = require('./user-model');
 
-router.get('/', (req, res, next) => {
+router.get('/', restricted, (req, res, next) => {
   Users.getUsers()
     .then(user => {
       if(!user){
@@ -18,7 +17,7 @@ router.get('/', (req, res, next) => {
     })
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', restricted, (req, res, next) => {
   const {id} = req.params
 
   Users.getUserById(id)
