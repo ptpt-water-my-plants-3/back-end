@@ -33,5 +33,22 @@ router.get('/:id', restricted, (req, res, next) => {
     })
 })
 
+router.put('/:id', restricted, (req, res, next) => {
+  const {id} = req.params
+  const changes = req.body
+
+  Users.editUser(id, changes)
+    .then(user => {
+      if(user){
+        res.json(user)
+      }else{
+        res.status(404).send({message: "User not found"})
+      }
+    })
+    .catch(err => {
+      next(err)
+    })
+})
+
 
 module.exports = router;

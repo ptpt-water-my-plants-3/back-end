@@ -1,7 +1,7 @@
 const db = require('../../data/dbConfig');
 
 function getUsers(){
-  return db('users as u').select('u.user_id','u.username','u.password')
+  return db('users as u').select('u.user_id','u.username','u.phonenumber')
 }
 
 function getUserById(id){
@@ -14,7 +14,7 @@ async function addUser(newUser){
   return getUserById(id).first();
 }
 
-function editUser(data, id){
+function editUser(id, data){
   return db('users').update(data).where('user_id', id)
 }
 

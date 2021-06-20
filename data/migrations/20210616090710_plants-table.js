@@ -12,6 +12,7 @@ exports.up = function(knex) {
     plant.string('nickname', 128).notNullable().unique();
     plant.string('species', 128).notNullable();
     plant.text('h20_frequency').notNullable();
+    plant.binary('plant_img');
     // plant.integer('user_id')
     //   .unsigned()
     //   .references('user_id')
