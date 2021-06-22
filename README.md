@@ -30,12 +30,20 @@ phone number is okay without the dashes as well
   "plant_id": 1,
   "nickname": "Sunflower",
   "species": "Helianthus annuus",
-  "h20_frequency": "an inch of water per week during growing season"
+  "h20_frequency": "an inch of water per week during growing season",
+  "plant_img": "plant image link here"
 }
 ```
 
-####[POST] /plants
-
+####[POST] /plants (adding a plant)
+```
+{
+  "nickname": "Sunflower",
+  "species": "Helianthus annuus",
+  "h20_frequency": "an inch of water per week during growing season",
+  "plant_img": (optional to add plant image)
+}
+```
 ####[UPDATE] /plants/:id
 
 ####[DELETE] /plants/:id
