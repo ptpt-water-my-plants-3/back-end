@@ -13,12 +13,12 @@ exports.up = function(knex) {
     plant.string('species', 128).notNullable();
     plant.text('h20_frequency').notNullable();
     plant.binary('plant_img');
-    // plant.integer('user_id')
-    //   .unsigned()
-    //   .references('user_id')
-    //   .inTable('users')
-    //   .onDelete('CASCADE')
-    //   .onUpdate('CASCADE')
+    plant.integer('user_id')
+      .unsigned()
+      .references('user_id')
+      .inTable('users')
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE')
   })
 };
 

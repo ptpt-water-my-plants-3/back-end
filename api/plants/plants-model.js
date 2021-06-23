@@ -6,11 +6,12 @@ const getPlants = () => {
 
 const getById = (id) => {
   return db('plants as p')
+    .select('*')
+    .leftJoin('users as u', 'u.user_id', 'p.user_id')
     .where('plant_id', id)
-    .select('p.nickname',
-    'p.species',
-    'p.h20_frequency')
-    .first()
+    .then(plant => {
+      return plant[0]
+    })
 };
 
 const addPlant = async (plant) => {

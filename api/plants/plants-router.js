@@ -34,6 +34,7 @@ router.get('/:id', restricted, (req, res, next) => {
 });
 
 router.post('/', restricted, (req, res, next) => {
+  console.log(req.body)
   Plants.addPlant(req.body)
     .then(plant => {
       res.status(201).json(plant)
